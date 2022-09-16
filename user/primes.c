@@ -52,7 +52,7 @@ void sieve(int* parent_p){
             exit(0);
         }
     }
-    //make sure the final child can exit and close parent pip
+    //make sure the final child can exit and close parent pipe
     close(parent_p[0]);
     exit(0);
 }
