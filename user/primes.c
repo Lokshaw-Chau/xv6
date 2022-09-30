@@ -41,6 +41,7 @@ void sieve(int* parent_p){
         }
         else{
             //parent
+            close(p_child[0]);
             while (read(parent_p[0],&num,sizeof(int))){
                 if(num % prime != 0){
                     write(p_child[1],&num,sizeof(int));
