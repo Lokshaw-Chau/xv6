@@ -130,7 +130,7 @@ void testfd(){
 
   sinfo(&info);
   if(info.freefd != nfd - 1) {
-    printf("sysinfotest: FAIL freefd is %d instead of %d\n", info.freefd, nfd - 1);
+    printf("sysinfotest1: FAIL freefd is %d instead of %d\n", info.freefd, nfd - 1);
     exit(1);
   }
   
@@ -139,14 +139,14 @@ void testfd(){
   }
   sinfo(&info);
   if(info.freefd != nfd - 11) {
-    printf("sysinfotest: FAIL freefd is %d instead of %d\n", info.freefd, nfd-11);
+    printf("sysinfotest2: FAIL freefd is %d instead of %d\n", info.freefd, nfd-11);
     exit(1);
   }
 
   close(fd);
   sinfo(&info);
   if(info.freefd != nfd - 10) {
-    printf("sysinfotest: FAIL freefd is %d instead of %d\n", info.freefd, nfd-10);
+    printf("sysinfotest3: FAIL freefd is %d instead of %d\n", info.freefd, nfd-10);
     exit(1);
   }
 }
