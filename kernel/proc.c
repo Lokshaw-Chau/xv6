@@ -709,3 +709,19 @@ restproc(void)
   }
   return cnt;
 }
+
+int
+restfd(void)
+{
+  struct proc *p = myproc();
+  
+  int cnt = 0;
+  acquire(&p->lock);
+  for (int i=0; i<NOFILE; i++)
+  {
+    if (p->ofile[i] == 0)
+      cnt++;
+  }
+  release(&p->lock);
+  return cnt;
+}
